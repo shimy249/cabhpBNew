@@ -21,23 +21,39 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
             
             .state('home.events', {
                 url: '/events',
-                templateURL: 'app/views/events.html',
+                templateUrl: 'app/views/events.html',
                 controller: 'EventListController',
                 controllerAs: 'vm',
                 data:{
                     title: 'Events'
                 }
-            }).state('home.attendees', {
+            })
+            .state('home.subevents',{
+                url: '/events/:id',
+                templateUrl: 'app/views/subevents.html',
+                controller: 'SubEventListController',
+                controllerAs: 'vm',
+                data:{
+                    title: 'SubEvents'
+                }
+            })
+            .state('home.subeventdetails',{
+                url:'/events/:id/details',
+                templateUrl: 'app/views/subeventdetails.html',
+                controller: 'SubEventDetailsController'
+            })
+            .state('home.attendees', {
                 url: '/attendees',
-                templateURL: 'app/views/profile.html',
+                templateUrl: 'app/views/profile.html',
                 controller: 'ProfileController',
                 controllerAs: 'vm',
                 data:{
                     title: 'Attendees'
                 }
-            }).state('home.devices', {
+            })
+            .state('home.devices', {
                 url: '/devices',
-                templateURL: 'app/views/devices.html',
+                templateUrl: 'app/views/devices.html',
                 controller: 'DeviceListController',
                 controllerAs: 'vm',
                 data:{

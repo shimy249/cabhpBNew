@@ -1,0 +1,12 @@
+<md-content class='md-padding' layout="row" layout-wrap>
+    <md-card style="width: 300px;" ng-repeat="subevent in vm.subevents" ng-click="goToAttendeeList(subevent._id)">
+
+        <md-card-content>
+            <h2>{{subevent.name}}</h2>
+            <h4>{{subevent.location}}</h4>
+            <h4>{{subevent.start_date_time | date : 'MMMM dd @ h:mma'}}</h4>
+        </md-card-content>
+
+    </md-card>
+
+</md-content>

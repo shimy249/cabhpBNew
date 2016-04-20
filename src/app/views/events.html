@@ -1,23 +1,13 @@
-<md-content md-theme="dark" class='md-padding' layout="row" layout-wrap>
-    <h1>Test</h1>
-    <md-card style="width: 300px;" >
-        <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">
-        <md-card-content>
-            <h2>{{event}}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        </md-card-content>
-        <div class="md-actions" layout="row" layout-align="end center">
+<md-content class='md-padding' layout="row" layout-wrap>
+    <md-card style="width: 300px;" ng-repeat="event in vm.events" ng-click="vm.goToSubEvent(event._id)" >
 
-        </div>
-    </md-card>
-    <md-card style="width: 300px;" >
-        <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">
         <md-card-content>
-            <h2>name</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <h2>{{event.display_name}}</h2>
+            <h4>{{event.location}}</h4>
+            <h4>{{event.start_date_time | date:yyyy-mm-dd}} - {{event.end_date_time | date:yyyy-mm-dd}}</h4>
+            <h4></h4>
         </md-card-content>
-        <div class="md-actions" layout="row" layout-align="end center">
 
-        </div>
     </md-card>
+
 </md-content>
