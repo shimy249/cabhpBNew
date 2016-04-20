@@ -10,19 +10,19 @@
   function navService($q){
     var menuItems = [
       {
-        name: 'Dashboard',
+        name: 'Events',
         icon: 'dashboard',
-        sref: '.dashboard'
+        sref: '.events'
       },
       {
-        name: 'Profile',
+        name: 'Attendees',
         icon: 'person',
-        sref: '.profile'
+        sref: '.attendees'
       },
       {
-        name: 'Table',
+        name: 'Devices',
         icon: 'view_module',
-        sref: '.table'
+        sref: '.devices'
       }
     ];
 
