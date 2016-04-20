@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
+angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
         'ngSanitize', 'ui.router', 'ngMaterial', 'nvd3', 'app'])
 
-    .constant('config', {
-        apiUrl: 'http://arcgis-CABHP-1819518128.us-west-1.elb.amazonaws.com:3000'
-    })
+    //.constant('config', {
+      //  apiUrl: 'http://arcgis-CABHP-1819518128.us-west-1.elb.amazonaws.com:3000'
+    //})
 
     .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider,
                       $mdIconProvider) {
@@ -18,6 +18,7 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
                 controllerAs: 'vm',
                 abstract: true
             })
+            
             .state('home.events', {
                 url: '/events',
                 templateURL: 'app/views/events.html',
@@ -28,8 +29,8 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
                 }
             }).state('home.attendees', {
                 url: '/attendees',
-                templateURL: 'app/views/attendees.html',
-                controller: 'AttendeeListController',
+                templateURL: 'app/views/profile.html',
+                controller: 'ProfileController',
                 controllerAs: 'vm',
                 data:{
                     title: 'Attendees'
